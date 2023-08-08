@@ -1,60 +1,60 @@
 package com.shourov.totel.view.welcome_screen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.shourov.totel.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.shourov.totel.adapter.OnBoardingViewPagerAdapter
+import com.shourov.totel.databinding.FragmentOnBoardingBinding
+import com.shourov.totel.model.OnBoardingModel
+import com.shourov.totel.repository.OnBoardingRepository
+import com.shourov.totel.view_model.OnBoardingViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [OnBoardingFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class OnBoardingFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentOnBoardingBinding
+
+    private val onBoardingData: ArrayList<OnBoardingModel> = ArrayList()
+    private var onBoardingViewPagerAdapter: OnBoardingViewPagerAdapter? = null
+    private var position = 0
+
+    private lateinit var viewModel: OnBoardingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_on_boarding, container, false)
+        binding = FragmentOnBoardingBinding.inflate(inflater, container, false)
+
+        viewModel = ViewModelProvider(this, OnBoardingViewModelFactory(OnBoardingRepository()))[OnBoardingViewModel::class.java]
+
+        viewModel.getOnBoardingData()
+
+        observerList()
+
+        onBoardingViewPagerAdapter = OnBoardingViewPagerAdapter(onBoardingData)
+        binding.screenPager.adapter = onBoardingViewPagerAdapter
+        binding.tabIndicator.setupWithViewPager(binding.screenPager)
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment OnBoardingFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OnBoardingFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun observerList() {
+        viewModel.onBoardingLiveData.observe(viewLifecycleOwner){
+            onBoardingData.clear()
+            onBoardingData.addAll(it)
+            binding.screenPager.adapter?.notifyDataSetChanged()
+        }
     }
+}
+
+
+
+
+class OnBoardingViewModelFactory(private val repository: OnBoardingRepository): ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T = OnBoardingViewModel(repository) as T
 }
