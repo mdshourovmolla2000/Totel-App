@@ -2,4 +2,53 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph" />
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authPlaceholderFragment">
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.shourov.totel.view.auth_screen.sign_in_screen.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signInOtpVerificationFragment"
+            app:destination="@id/signInOtpVerificationFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountFragment"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" />
+    <fragment
+        android:id="@+id/authPlaceholderFragment"
+        android:name="com.shourov.totel.view.auth_screen.AuthPlaceholderFragment"
+        android:label="fragment_auth_placeholder"
+        tools:layout="@layout/fragment_auth_placeholder" >
+        <action
+            android:id="@+id/action_authPlaceholderFragment_to_signInFragment"
+            app:popUpTo="@id/authPlaceholderFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/signInFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_authPlaceholderFragment_to_createAccountFragment"
+            app:popUpTo="@id/authPlaceholderFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/createAccountFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInOtpVerificationFragment"
+        android:name="com.shourov.totel.view.auth_screen.sign_in_screen.SignInOtpVerificationFragment"
+        android:label="fragment_sign_in_otp_verification"
+        tools:layout="@layout/fragment_sign_in_otp_verification" />
+</navigation>

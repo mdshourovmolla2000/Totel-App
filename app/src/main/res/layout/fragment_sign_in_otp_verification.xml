@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.auth_screen.sign_in_screen.SignInOtpVerificationFragment"
+    android:orientation="vertical"
+    android:padding="@dimen/_12sdp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verification"
+        android:textSize="@dimen/_22sdp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/sf_pro_display_bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_3sdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter the 6-digit code sent to"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_text_regular"/>
+
+        <TextView
+            android:id="@+id/mobileNumberTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+0123456789"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/themeColor"
+            android:fontFamily="@font/sf_pro_text_bold"
+            android:layout_marginStart="@dimen/_3sdp"/>
+
+    </LinearLayout>
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:itemBackground="#99EBEBF5"
+        android:inputType="numberSigned"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_17sdp"
+        android:fontFamily="@font/sf_pro_display_bold"
+        app:itemCount="6"
+        app:itemHeight="@dimen/_46sdp"
+        app:itemRadius="@dimen/_9sdp"
+        app:itemSpacing="@dimen/_6sdp"
+        app:itemWidth="@dimen/_41sdp"
+        app:lineColor="@color/themeColor"
+        app:lineWidth="1dp"
+        app:hideLineWhenFilled="true"
+        app:viewType="rectangle"
+        style="@style/PinWidget.PinView"
+        android:layout_gravity="center_horizontal"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resendOtpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetLeft="0dp"
+        android:insetBottom="0dp"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:text="I haven’t received a code (0:59)"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="#993C3C43"
+        android:fontFamily="@font/sf_pro_text_bold"
+        app:cornerRadius="@dimen/_15sdp"
+        android:backgroundTint="#99EBEBF5"
+        android:paddingVertical="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:enabled="false"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetLeft="0dp"
+        android:insetBottom="0dp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:text="Confirm"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="#993C3C43"
+        android:fontFamily="@font/sf_pro_text_bold"
+        app:cornerRadius="@dimen/_20sdp"
+        android:backgroundTint="#F2F2F7"
+        android:enabled="false"/>
+
+</LinearLayout>

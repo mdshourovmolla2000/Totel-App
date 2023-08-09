@@ -1,5 +1,6 @@
 package com.shourov.totel.view.welcome_screen
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.shourov.totel.R
 import com.shourov.totel.adapter.OnBoardingViewPagerAdapter
 import com.shourov.totel.databinding.FragmentOnBoardingBinding
 import com.shourov.totel.model.OnBoardingModel
 import com.shourov.totel.repository.OnBoardingRepository
+import com.shourov.totel.view.auth_screen.AuthActivity
 import com.shourov.totel.view_model.OnBoardingViewModel
 
 class OnBoardingFragment : Fragment() {
@@ -40,6 +43,14 @@ class OnBoardingFragment : Fragment() {
         binding.screenPager.adapter = onBoardingViewPagerAdapter
         binding.tabIndicator.setupWithViewPager(binding.screenPager)
 
+        binding.createAccountButton.setOnClickListener {
+            goToNextScreen("CREATE_ACCOUNT")
+        }
+
+        binding.signInButton.setOnClickListener {
+            goToNextScreen("SIGN_IN")
+        }
+
         return binding.root
     }
 
@@ -49,6 +60,13 @@ class OnBoardingFragment : Fragment() {
             onBoardingData.addAll(it)
             binding.screenPager.adapter?.notifyDataSetChanged()
         }
+    }
+
+    private fun goToNextScreen(screen: String) {
+        val intent = Intent(requireActivity(), AuthActivity::class.java)
+        intent.putExtra("WHERE_TO_GO", screen)
+        startActivity(intent)
+        requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
     }
 }
 

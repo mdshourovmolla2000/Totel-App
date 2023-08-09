@@ -58,4 +58,10 @@ dependencies {
 
     //Toasty
     implementation 'com.github.GrenderG:Toasty:1.5.2'
+
+    //country code picker
+    implementation 'com.hbb20:ccp:2.7.3'
+
+    //pin view
+    implementation 'io.github.chaosleung:pinview:1.4.4'
 }
