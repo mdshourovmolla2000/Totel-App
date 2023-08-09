@@ -50,5 +50,18 @@
         android:id="@+id/signInOtpVerificationFragment"
         android:name="com.shourov.totel.view.auth_screen.sign_in_screen.SignInOtpVerificationFragment"
         android:label="fragment_sign_in_otp_verification"
-        tools:layout="@layout/fragment_sign_in_otp_verification" />
+        tools:layout="@layout/fragment_sign_in_otp_verification" >
+        <action
+            android:id="@+id/action_signInOtpVerificationFragment_to_signInPasswordFragment"
+            app:destination="@id/signInPasswordFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInPasswordFragment"
+        android:name="com.shourov.totel.view.auth_screen.sign_in_screen.SignInPasswordFragment"
+        android:label="fragment_sign_in_password"
+        tools:layout="@layout/fragment_sign_in_password" />
 </navigation>

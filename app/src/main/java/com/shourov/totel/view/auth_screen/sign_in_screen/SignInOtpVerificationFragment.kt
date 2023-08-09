@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +12,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.shourov.totel.R
 import com.shourov.totel.databinding.FragmentSignInOtpVerificationBinding
 import com.shourov.totel.utils.KeyboardManager
@@ -36,13 +36,6 @@ class SignInOtpVerificationFragment : Fragment() {
 
         binding.mobileNumberTextview.text = mobileNumber
 
-        binding.pinView.requestFocus()
-
-        try {
-            val inputMethodManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
-        } catch (ignored: Exception) {}
-
         binding.pinView.doOnTextChanged { text, start, before, count ->
             if (text.toString().length == 6) {
                 binding.confirmButton.isEnabled = true
@@ -59,7 +52,7 @@ class SignInOtpVerificationFragment : Fragment() {
 
         binding.confirmButton.setOnClickListener {
             KeyboardManager.hideKeyBoard(requireContext(), it)
-
+            findNavController().navigate(R.id.action_signInOtpVerificationFragment_to_signInPasswordFragment)
         }
 
         return binding.root
