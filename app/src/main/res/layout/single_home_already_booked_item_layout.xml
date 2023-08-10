@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_marginBottom="@dimen/_3sdp"
+    android:paddingHorizontal="@dimen/_12sdp"
+    android:paddingVertical="@dimen/_11sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePicImageview"
+            android:layout_width="@dimen/_37sdp"
+            android:layout_height="@dimen/_37sdp"
+            android:src="@drawable/image_placeholder_square"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/_9sdp"
+            android:layout_toEndOf="@id/profilePicImageview"
+            android:layout_toStartOf="@id/optionIcon"
+            android:layout_centerVertical="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/nameTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_bold"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:src="@drawable/blue_tick_icon"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/locationTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="#993C3C43"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:layout_marginTop="@dimen/_2sdp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/optionIcon"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/home_booked_item_option_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:paddingVertical="@dimen/_7sdp"/>
+
+    </RelativeLayout>
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/imageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_marginTop="@dimen/_9sdp"
+        app:iss_auto_cycle="false"/>
+
+    <TextView
+        android:id="@+id/hotelNameTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:text="Hotel Name"
+        android:textSize="@dimen/_16sdp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/sf_pro_text_bold"/>
+
+    <TextView
+        android:id="@+id/detailedLocationTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:text="Detailed Location"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="#993C3C43"
+        android:fontFamily="@font/sf_pro_text_regular"/>
+
+    <TextView
+        android:id="@+id/dateTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:text="Date"
+        android:textSize="@dimen/_10sdp"
+        android:textColor="#993C3C43"
+        android:fontFamily="@font/sf_pro_text_regular"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/priceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/statusButton"
+            android:layout_marginEnd="@dimen/_4sdp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/statusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:insetTop="0dp"
+            android:text="Booked"
+            android:textColor="#993C3C43"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:backgroundTint="#F2F2F7"
+            android:paddingHorizontal="@dimen/_9sdp"
+            android:paddingVertical="@dimen/_3sdp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
