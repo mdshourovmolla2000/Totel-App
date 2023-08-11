@@ -22,7 +22,9 @@ class SignInFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSignInBinding.inflate(inflater, container, false)
 
-        binding.backIcon.setOnClickListener { requireActivity().finish() }
+        binding.backIcon.setOnClickListener { requireActivity().onBackPressed() }
+
+        binding.createAccountButton.setOnClickListener { findNavController().navigate(R.id.action_signInFragment_to_createAccountFragment) }
 
         binding.countryCodePicker.registerCarrierNumberEditText(binding.mobileNumberEdittext)
 

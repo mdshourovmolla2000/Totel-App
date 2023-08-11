@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#99EBEBF5"
+    android:fontFamily="@font/sf_pro_text_bold"
+    android:insetLeft="0dp"
+    android:insetTop="0dp"
+    android:insetRight="0dp"
+    android:insetBottom="0dp"
+    android:text="Item"
+    android:textColor="@color/black"
+    android:textSize="@dimen/_12sdp"
+    app:cornerRadius="@dimen/_15sdp"
+    android:paddingVertical="@dimen/_8sdp"
+    android:paddingHorizontal="@dimen/_12sdp"
+    android:layout_marginHorizontal="@dimen/_3sdp"
+    android:layout_marginVertical="@dimen/_2sdp"/>

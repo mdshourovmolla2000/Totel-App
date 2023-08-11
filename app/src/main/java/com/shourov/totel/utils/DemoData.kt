@@ -2,6 +2,7 @@ package com.shourov.totel.utils
 
 import com.denzcoskun.imageslider.models.SlideModel
 import com.shourov.totel.R
+import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.model.HomeAlreadyBookedModel
 import com.shourov.totel.model.OnBoardingModel
 
@@ -31,6 +32,24 @@ class DemoData {
             SlideModel(R.drawable.home_already_booked_hotel_pic_1),
             SlideModel(R.drawable.home_already_booked_hotel_pic_2)
         ), "Brunel's SS Great Britain", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "25 Jan - 27 Jan", "\$650/Night"))
+        return itemList
+    }
+
+    fun hobbiesData(): List<HobbyModel>{
+        val itemList: ArrayList<HobbyModel> = ArrayList()
+        itemList.add(HobbyModel("Cooking"))
+        itemList.add(HobbyModel("Learning Languages"))
+        itemList.add(HobbyModel("Music"))
+        itemList.add(HobbyModel("Gym"))
+        itemList.add(HobbyModel("Photography"))
+        itemList.add(HobbyModel("Travel"))
+        itemList.add(HobbyModel("Art"))
+        itemList.add(HobbyModel("Swimming"))
+        itemList.add(HobbyModel("Playing Games"))
+        itemList.add(HobbyModel("Sports"))
+        itemList.add(HobbyModel("Travel"))
+        itemList.add(HobbyModel("Sports"))
+        itemList.add(HobbyModel("Dance"))
         return itemList
     }
 }

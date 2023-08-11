@@ -16,12 +16,34 @@
             app:popExitAnim="@anim/pop_exit"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_signInFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
     </fragment>
     <fragment
         android:id="@+id/createAccountFragment"
         android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountFragment"
         android:label="fragment_create_account"
-        tools:layout="@layout/fragment_create_account" />
+        tools:layout="@layout/fragment_create_account" >
+        <action
+            android:id="@+id/action_createAccountFragment_to_createAccountOtpVerificationFragment"
+            app:destination="@id/createAccountOtpVerificationFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_createAccountFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
     <fragment
         android:id="@+id/authPlaceholderFragment"
         android:name="com.shourov.totel.view.auth_screen.AuthPlaceholderFragment"
@@ -64,4 +86,74 @@
         android:name="com.shourov.totel.view.auth_screen.sign_in_screen.SignInPasswordFragment"
         android:label="fragment_sign_in_password"
         tools:layout="@layout/fragment_sign_in_password" />
+    <fragment
+        android:id="@+id/createAccountOtpVerificationFragment"
+        android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountOtpVerificationFragment"
+        android:label="fragment_create_account_otp_verification"
+        tools:layout="@layout/fragment_create_account_otp_verification" >
+        <action
+            android:id="@+id/action_createAccountOtpVerificationFragment_to_createAccountPasswordFragment"
+            app:destination="@id/createAccountPasswordFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountPasswordFragment"
+        android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountPasswordFragment"
+        android:label="fragment_create_account_password"
+        tools:layout="@layout/fragment_create_account_password" >
+        <action
+            android:id="@+id/action_createAccountPasswordFragment_to_createAccountNameFragment"
+            app:destination="@id/createAccountNameFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountNameFragment"
+        android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountNameFragment"
+        android:label="fragment_create_account_name"
+        tools:layout="@layout/fragment_create_account_name" >
+        <action
+            android:id="@+id/action_createAccountNameFragment_to_createAccountDateOfBirthFragment"
+            app:destination="@id/createAccountDateOfBirthFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountDateOfBirthFragment"
+        android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountDateOfBirthFragment"
+        android:label="fragment_create_account_date_of_birth"
+        tools:layout="@layout/fragment_create_account_date_of_birth" >
+        <action
+            android:id="@+id/action_createAccountDateOfBirthFragment_to_createAccountProfilePictureFragment"
+            app:destination="@id/createAccountProfilePictureFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountProfilePictureFragment"
+        android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountProfilePictureFragment"
+        android:label="fragment_create_account_profile_picture"
+        tools:layout="@layout/fragment_create_account_profile_picture" >
+        <action
+            android:id="@+id/action_createAccountProfilePictureFragment_to_createAccountHobbiesFragment"
+            app:destination="@id/createAccountHobbiesFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountHobbiesFragment"
+        android:name="com.shourov.totel.view.auth_screen.create_account_screen.CreateAccountHobbiesFragment"
+        android:label="fragment_create_account_hobbies"
+        tools:layout="@layout/fragment_create_account_hobbies" />
 </navigation>
