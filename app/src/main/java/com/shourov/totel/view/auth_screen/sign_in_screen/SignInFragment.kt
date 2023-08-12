@@ -37,7 +37,7 @@ class SignInFragment : Fragment() {
             KeyboardManager.hideKeyBoard(requireContext(), it)
 
             val bundle = bundleOf(
-                "MOBILE_NUMBER" to "+"+binding.countryCodePicker.fullNumber
+                "MOBILE_NUMBER" to binding.countryCodePicker.fullNumberWithPlus
             )
             findNavController().navigate(R.id.action_signInFragment_to_signInOtpVerificationFragment, bundle)
         }

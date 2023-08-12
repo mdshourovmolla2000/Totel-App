@@ -1,60 +1,76 @@
 package com.shourov.totel.view.notification_screen
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.shourov.totel.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.shourov.totel.adapter.NotificationListAdapter
+import com.shourov.totel.databinding.FragmentNotificationBinding
+import com.shourov.totel.model.NotificationModel
+import com.shourov.totel.repository.NotificationRepository
+import com.shourov.totel.view_model.NotificationViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [NotificationFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class NotificationFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentNotificationBinding
+
+    private lateinit var viewModel: NotificationViewModel
+
+    private val todayNotificationList = ArrayList<NotificationModel?>()
+    private val thisWeekNotificationList = ArrayList<NotificationModel?>()
+    private val thisMonthNotificationList = ArrayList<NotificationModel?>()
+    private val earlierNotificationList = ArrayList<NotificationModel?>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false)
+        binding = FragmentNotificationBinding.inflate(inflater, container, false)
+
+        viewModel = ViewModelProvider(this, NotificationViewModelFactory(NotificationRepository()))[NotificationViewModel::class.java]
+
+        viewModel.getNotification()
+
+        observerList()
+
+        binding.notificationTodayRecyclerview.adapter = NotificationListAdapter(todayNotificationList)
+        binding.notificationThisWeekRecyclerview.adapter = NotificationListAdapter(thisWeekNotificationList)
+        binding.notificationThisMonthRecyclerview.adapter = NotificationListAdapter(thisMonthNotificationList)
+        binding.notificationEarlierRecyclerview.adapter = NotificationListAdapter(earlierNotificationList)
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NotificationFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            NotificationFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun observerList(){
+        viewModel.notificationLiveData.observe(viewLifecycleOwner) {
+
+            todayNotificationList.clear()
+            thisWeekNotificationList.clear()
+            thisMonthNotificationList.clear()
+            earlierNotificationList.clear()
+
+            todayNotificationList.addAll(ArrayList(it.filter { item -> item?.notificationCategory == "Today" }))
+            binding.notificationTodayRecyclerview.adapter?.notifyDataSetChanged()
+
+            thisWeekNotificationList.addAll(ArrayList(it.filter { item -> item?.notificationCategory == "This Week" }))
+            binding.notificationThisWeekRecyclerview.adapter?.notifyDataSetChanged()
+
+            thisMonthNotificationList.addAll(ArrayList(it.filter { item -> item?.notificationCategory == "This Month" }))
+            binding.notificationThisMonthRecyclerview.adapter?.notifyDataSetChanged()
+
+            earlierNotificationList.addAll(ArrayList(it.filter { item -> item?.notificationCategory == "Earlier" }))
+            binding.notificationEarlierRecyclerview.adapter?.notifyDataSetChanged()
+        }
     }
+}
+
+
+
+
+class NotificationViewModelFactory(private val repository: NotificationRepository): ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T = NotificationViewModel(repository) as T
 }

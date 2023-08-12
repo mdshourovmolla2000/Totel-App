@@ -37,7 +37,7 @@ class CreateAccountFragment : Fragment() {
             KeyboardManager.hideKeyBoard(requireContext(), it)
 
             val bundle = bundleOf(
-                "MOBILE_NUMBER" to "+"+binding.countryCodePicker.fullNumber
+                "MOBILE_NUMBER" to binding.countryCodePicker.fullNumberWithPlus
             )
             findNavController().navigate(R.id.action_createAccountFragment_to_createAccountOtpVerificationFragment, bundle)
         }
