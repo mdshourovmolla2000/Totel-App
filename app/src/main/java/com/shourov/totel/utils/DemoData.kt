@@ -6,6 +6,7 @@ import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.model.HomeAlreadyBookedModel
 import com.shourov.totel.model.NotificationModel
 import com.shourov.totel.model.OnBoardingModel
+import com.shourov.totel.model.ProfileAlreadyBookedModel
 
 class DemoData {
     fun onBoardingData(): List<OnBoardingModel> {
@@ -67,6 +68,25 @@ class DemoData {
         itemList.add(NotificationModel(R.drawable.notification_profile_pic_3, "sugeevan_svg & jamestalan send you a proposal.", "23 March, 2022", R.drawable.notification_image_1, "Earlier"))
         itemList.add(NotificationModel(R.drawable.notification_profile_pic_1, "stella_sf Send you a proposal.", "18 March, 2022", R.drawable.notification_image_2, "Earlier"))
         itemList.add(NotificationModel(R.drawable.notification_profile_pic_2, "maria_2 give you a review: @konsikan exactly..", "12 March, 2022", R.drawable.notification_image_3, "Earlier"))
+        return itemList
+    }
+
+    fun profileAlreadyBookedData(): List<ProfileAlreadyBookedModel> {
+        val itemList: ArrayList<ProfileAlreadyBookedModel> = ArrayList()
+        itemList.add(
+            ProfileAlreadyBookedModel(arrayListOf(
+            SlideModel(R.drawable.home_already_booked_hotel_pic_1),
+            SlideModel(R.drawable.home_already_booked_hotel_pic_2),
+            SlideModel(R.drawable.home_already_booked_hotel_pic_3)
+        ), "Brunel's SS Great Britain", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "Bristol, Bath & London", "25 Jan - 27 Jan", "\$650/Night", null)
+        )
+        itemList.add(
+            ProfileAlreadyBookedModel(arrayListOf(
+                SlideModel(R.drawable.home_already_booked_hotel_pic_1),
+                SlideModel(R.drawable.home_already_booked_hotel_pic_2),
+                SlideModel(R.drawable.home_already_booked_hotel_pic_3)
+            ), "Brunel's SS Great Britain", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "Bristol, Bath & London", "25 Jan - 27 Jan", "\$650/Night", "Finished")
+        )
         return itemList
     }
 }
