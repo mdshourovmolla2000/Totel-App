@@ -4,6 +4,7 @@ import com.denzcoskun.imageslider.models.SlideModel
 import com.shourov.totel.R
 import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.model.HomeAlreadyBookedModel
+import com.shourov.totel.model.MessageModel
 import com.shourov.totel.model.NotificationModel
 import com.shourov.totel.model.OnBoardingModel
 import com.shourov.totel.model.ProfileAlreadyBookedModel
@@ -87,6 +88,17 @@ class DemoData {
                 SlideModel(R.drawable.home_already_booked_hotel_pic_3)
             ), "Brunel's SS Great Britain", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "Bristol, Bath & London", "25 Jan - 27 Jan", "\$650/Night", "Finished")
         )
+        return itemList
+    }
+
+    fun messageData(): List<MessageModel> {
+        val itemList: ArrayList<MessageModel> = ArrayList()
+        itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 2))
+        itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 2))
+        itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 2))
+        itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 0))
+        itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 0))
+        itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 0))
         return itemList
     }
 }
