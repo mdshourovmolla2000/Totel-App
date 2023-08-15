@@ -6,4 +6,7 @@
     <color name="themeColor">#0057FF</color>
     <color name="windowBackgroundColor">#FFFFFF</color>
 
+    <color name="switchOffColor">#F4F4F4</color>
+    <color name="switchOnColor">#34C759</color>
+
 </resources>

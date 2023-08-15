@@ -28,6 +28,12 @@ class SettingsFragment : Fragment() {
 
         binding.backIcon.setOnClickListener { findNavController().popBackStack() }
 
+        binding.profileButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_profileSettingFragment) }
+
+        binding.notificationButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_notificationSettingFragment) }
+
+        binding.securityButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_securitySettingFragment) }
+
         binding.versionButton.setOnClickListener { updateDialog() }
 
         binding.signOutButton.setOnClickListener { signOutDialog() }

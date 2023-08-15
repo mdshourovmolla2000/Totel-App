@@ -58,5 +58,55 @@
         android:id="@+id/settingsFragment"
         android:name="com.shourov.totel.view.profile_screen.settings_screen.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_notificationSettingFragment"
+            app:destination="@id/notificationSettingFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_settingsFragment_to_securitySettingFragment"
+            app:destination="@id/securitySettingFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_settingsFragment_to_profileSettingFragment"
+            app:destination="@id/profileSettingFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationSettingFragment"
+        android:name="com.shourov.totel.view.profile_screen.settings_screen.NotificationSettingFragment"
+        android:label="fragment_notification_setting"
+        tools:layout="@layout/fragment_notification_setting" />
+    <fragment
+        android:id="@+id/securitySettingFragment"
+        android:name="com.shourov.totel.view.profile_screen.settings_screen.SecuritySettingFragment"
+        android:label="fragment_security_setting"
+        tools:layout="@layout/fragment_security_setting" >
+        <action
+            android:id="@+id/action_securitySettingFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.shourov.totel.view.profile_screen.settings_screen.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/profileSettingFragment"
+        android:name="com.shourov.totel.view.profile_screen.settings_screen.ProfileSettingFragment"
+        android:label="fragment_profile_setting"
+        tools:layout="@layout/fragment_profile_setting" />
 </navigation>

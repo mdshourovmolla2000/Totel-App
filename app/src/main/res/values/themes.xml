@@ -8,4 +8,9 @@
         <item name="android:scrollbarSize">4dp</item>
         <item name="android:scrollbarThumbVertical">@color/themeColor</item>
     </style>
+
+    <style name="SwitchCustomStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlActivated">@color/switchOnColor</item>
+        <item name="colorSwitchThumbNormal">@color/switchOffColor</item>
+    </style>
 </resources>
