@@ -3,59 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/guestHomeFragment">
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.shourov.totel.view.home_screen.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:id="@+id/guestBookingsFragment"
+        android:name="com.shourov.totel.view.guest_activity.bookings_screen.GuestBookingsFragment"
+        android:label="fragment_guest_bookings"
+        tools:layout="@layout/fragment_guest_bookings" >
         <action
-            android:id="@+id/action_homeFragment_to_bookingsFragment"
-            app:destination="@id/bookingsFragment"
-            app:popEnterAnim="@anim/pop_enter"
-            app:popExitAnim="@anim/pop_exit"
-            app:enterAnim="@anim/enter"
-            app:exitAnim="@anim/exit" />
-        <action
-            android:id="@+id/action_homeFragment_to_notificationFragment"
-            app:destination="@id/notificationFragment"
-            app:popEnterAnim="@anim/pop_enter"
-            app:popExitAnim="@anim/pop_exit"
-            app:enterAnim="@anim/enter"
-            app:exitAnim="@anim/exit" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
+            android:id="@+id/action_guestBookingsFragment_to_guestMessagesFragment"
+            app:destination="@id/guestMessagesFragment"
             app:popEnterAnim="@anim/pop_enter"
             app:popExitAnim="@anim/pop_exit"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
     </fragment>
     <fragment
-        android:id="@+id/bookingsFragment"
-        android:name="com.shourov.totel.view.bookings_screen.BookingsFragment"
-        android:label="fragment_bookings"
-        tools:layout="@layout/fragment_bookings" >
-        <action
-            android:id="@+id/action_bookingsFragment_to_messagesFragment"
-            app:destination="@id/messagesFragment"
-            app:popEnterAnim="@anim/pop_enter"
-            app:popExitAnim="@anim/pop_exit"
-            app:enterAnim="@anim/enter"
-            app:exitAnim="@anim/exit" />
-    </fragment>
+        android:id="@+id/guestNotificationFragment"
+        android:name="com.shourov.totel.view.guest_activity.notification_screen.GuestNotificationFragment"
+        android:label="fragment_guest_notification"
+        tools:layout="@layout/fragment_guest_notification" />
     <fragment
-        android:id="@+id/notificationFragment"
-        android:name="com.shourov.totel.view.notification_screen.NotificationFragment"
-        android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.shourov.totel.view.profile_screen.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:id="@+id/guestProfileFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.GuestProfileFragment"
+        android:label="fragment_guest_profile"
+        tools:layout="@layout/fragment_guest_profile" >
         <action
-            android:id="@+id/action_profileFragment_to_settingsFragment"
+            android:id="@+id/action_guestProfileFragment_to_settingsFragment"
             app:destination="@id/settingsFragment"
             app:popEnterAnim="@anim/pop_enter"
             app:popExitAnim="@anim/pop_exit"
@@ -64,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.shourov.totel.view.profile_screen.settings_screen.SettingsFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -91,12 +64,12 @@
     </fragment>
     <fragment
         android:id="@+id/notificationSettingFragment"
-        android:name="com.shourov.totel.view.profile_screen.settings_screen.NotificationSettingFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.NotificationSettingFragment"
         android:label="fragment_notification_setting"
         tools:layout="@layout/fragment_notification_setting" />
     <fragment
         android:id="@+id/securitySettingFragment"
-        android:name="com.shourov.totel.view.profile_screen.settings_screen.SecuritySettingFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.SecuritySettingFragment"
         android:label="fragment_security_setting"
         tools:layout="@layout/fragment_security_setting" >
         <action
@@ -109,30 +82,57 @@
     </fragment>
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.shourov.totel.view.profile_screen.settings_screen.ChangePasswordFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.ChangePasswordFragment"
         android:label="fragment_change_password"
         tools:layout="@layout/fragment_change_password" />
     <fragment
         android:id="@+id/profileSettingFragment"
-        android:name="com.shourov.totel.view.profile_screen.settings_screen.ProfileSettingFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.ProfileSettingFragment"
         android:label="fragment_profile_setting"
         tools:layout="@layout/fragment_profile_setting" />
     <fragment
-        android:id="@+id/messagesFragment"
-        android:name="com.shourov.totel.view.bookings_screen.messages_screen.MessagesFragment"
-        android:label="fragment_messages"
-        tools:layout="@layout/fragment_messages" >
+        android:id="@+id/guestMessagesFragment"
+        android:name="com.shourov.totel.view.guest_activity.bookings_screen.messages_screen.GuestMessagesFragment"
+        android:label="fragment_guest_messages"
+        tools:layout="@layout/fragment_guest_messages" >
         <action
-            android:id="@+id/action_messagesFragment_to_chatFragment"
-            app:destination="@id/chatFragment"
+            android:id="@+id/action_guestMessagesFragment_to_guestChatFragment"
+            app:destination="@id/guestChatFragment"
             app:popEnterAnim="@anim/pop_enter"
             app:popExitAnim="@anim/pop_exit"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
     </fragment>
     <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.shourov.totel.view.bookings_screen.messages_screen.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+        android:id="@+id/guestChatFragment"
+        android:name="com.shourov.totel.view.guest_activity.bookings_screen.messages_screen.GuestChatFragment"
+        android:label="fragment_guest_chat"
+        tools:layout="@layout/fragment_guest_chat" />
+    <fragment
+        android:id="@+id/guestHomeFragment"
+        android:name="com.shourov.totel.view.guest_activity.home_screen.GuestHomeFragment"
+        android:label="fragment_guest_home"
+        tools:layout="@layout/fragment_guest_home" >
+        <action
+            android:id="@+id/action_guestHomeFragment_to_guestBookingsFragment"
+            app:destination="@id/guestBookingsFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_guestHomeFragment_to_guestNotificationFragment"
+            app:destination="@id/guestNotificationFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_guestHomeFragment_to_guestProfileFragment"
+            app:destination="@id/guestProfileFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
 </navigation>

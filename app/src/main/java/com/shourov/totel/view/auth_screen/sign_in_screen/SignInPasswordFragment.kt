@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import com.shourov.totel.R
 import com.shourov.totel.databinding.FragmentSignInPasswordBinding
 import com.shourov.totel.utils.KeyboardManager
-import com.shourov.totel.view.MainActivity
+import com.shourov.totel.utils.SharedPref
+import com.shourov.totel.view.guest_activity.GuestActivity
+import com.shourov.totel.view.host_activity.HostActivity
 
 class SignInPasswordFragment : Fragment() {
 
@@ -24,6 +26,7 @@ class SignInPasswordFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSignInPasswordBinding.inflate(inflater, container, false)
+        SharedPref.init(requireContext())
 
         binding.passwordToggleIcon.setOnClickListener {
             isPasswordVisible =!isPasswordVisible
@@ -41,7 +44,10 @@ class SignInPasswordFragment : Fragment() {
 
             KeyboardManager.hideKeyBoard(requireContext(), it)
 
-            val intent = Intent(requireActivity(), MainActivity::class.java)
+            SharedPref.write("IS_SIGNED_IN", "yes")
+            SharedPref.write("IS_ON_BOARDING_SCREEN_SHOWED", "yes")
+
+            val intent = Intent(requireActivity(), GuestActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
             requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)

@@ -22,7 +22,6 @@ class OnBoardingFragment : Fragment() {
 
     private val onBoardingData: ArrayList<OnBoardingModel> = ArrayList()
     private var onBoardingViewPagerAdapter: OnBoardingViewPagerAdapter? = null
-    private var position = 0
 
     private lateinit var viewModel: OnBoardingViewModel
 

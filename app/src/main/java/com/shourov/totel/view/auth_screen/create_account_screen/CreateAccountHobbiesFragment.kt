@@ -8,16 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import com.shourov.totel.R
 import com.shourov.totel.adapter.HobbyListAdapter
 import com.shourov.totel.databinding.FragmentCreateAccountHobbiesBinding
 import com.shourov.totel.interfaces.HobbyItemClickListener
 import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.repository.CreateAccountHobbiesRepository
+import com.shourov.totel.utils.SharedPref
 import com.shourov.totel.utils.showInfoToast
 import com.shourov.totel.utils.showSuccessToast
-import com.shourov.totel.view.MainActivity
+import com.shourov.totel.view.guest_activity.GuestActivity
 import com.shourov.totel.view_model.CreateAccountHobbiesViewModel
 
 class CreateAccountHobbiesFragment : Fragment(), HobbyItemClickListener {
@@ -37,6 +37,7 @@ class CreateAccountHobbiesFragment : Fragment(), HobbyItemClickListener {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentCreateAccountHobbiesBinding.inflate(inflater, container, false)
+        SharedPref.init(requireContext())
 
         selectedHobbiesCount = 0
 
@@ -50,16 +51,23 @@ class CreateAccountHobbiesFragment : Fragment(), HobbyItemClickListener {
         binding.hobbiesRecyclerview.adapter = HobbyListAdapter(hobbiesList, this)
 
         binding.continueButton.setOnClickListener {
+            SharedPref.write("IS_SIGNED_IN", "yes")
+            SharedPref.write("IS_ON_BOARDING_SCREEN_SHOWED", "yes")
+
             requireContext().showSuccessToast("Account created")
-            val intent = Intent(requireActivity(), MainActivity::class.java)
+            val intent = Intent(requireActivity(), GuestActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
             requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
         }
 
         binding.skipButton.setOnClickListener {
+            SharedPref.write("IS_SIGNED_IN", "yes")
+            SharedPref.write("IS_ON_BOARDING_SCREEN_SHOWED", "yes")
+            SharedPref.write("USER_MODE", "guest")
+
             requireContext().showSuccessToast("Account created")
-            val intent = Intent(requireActivity(), MainActivity::class.java)
+            val intent = Intent(requireActivity(), GuestActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
             requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
