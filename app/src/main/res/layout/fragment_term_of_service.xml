@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.guest_activity.profile_screen.settings_screen.TermOfServiceFragment">
+
+    <TextView
+        android:id="@+id/titleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms of Service"
+        android:textSize="@dimen/_25sdp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        android:layout_margin="@dimen/_15sdp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titleTextview"
+        android:layout_above="@id/bottomSection"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor amet, consectetur adipiscing elit\n\nVestibulum fermentum, magna in ultricies sollicitudin, tortor augue rhoncus ex, sed molestie nulla nibh in enim. Mauris at interdum ex. Phasellus fermentum est eu ante lacinia consequat. Vivamus quis porta sapien, quis commodo diam. Phasellus luctus nisi ex, at aliquam orci tincidunt sed. Vestibulum bibendum mauris eros, quis aliquam tortor vestibulum id. Cras sollicitudin commodo arcu, vel faucibus ipsum condimentum non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eget condimentum sem. Vivamus maximus turpis laoreet malesuada varius. Nullam id ante non ex consectetur auctor. Fusce fringilla gravida rhoncus. Vestibulum finibus id lacus ac auctor. In in elementum urna. Donec fermentum tellus id tortor cursus cursus.\n\nMorbi et rutrum lorem. Proin malesuada hendrerit ultrices. Nam justo justo, ultricies at aliquam eu, sodales quis enim. Donec semper lorem est, eget iaculis eros pretium et. Fusce eu placerat mi. Quisque vitae massa et lacus bibendum sodales eu sed dolor. Morbi et imperdiet dolor. Aliquam et elementum nisi.\n\nVivamus sed nisl nec mauris sagittis porttitor. Curabitur eu augue sit amet sapien congue volutpat ac at lectus. Sed at vestibulum massa. Donec condimentum viverra dolor, at dictum risus imperdiet quis. Ut mattis a felis at viverra. Nunc non mauris quam. Suspendisse luctus sem ornare, condimentum eros quis, convallis ante. Integer viverra augue at ipsum accumsan porta."
+                android:textColor="#454545"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/inter_regular"
+                android:justificationMode="inter_word"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/_15sdp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/acceptButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetLeft="0dp"
+            android:insetBottom="0dp"
+            android:text="Accept"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/inter_regular"
+            app:cornerRadius="@dimen/_20sdp"
+            android:backgroundTint="@color/themeColor"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/declineButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetLeft="0dp"
+            android:insetBottom="0dp"
+            android:text="Decline"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_regular"
+            app:cornerRadius="@dimen/_20sdp"
+            android:backgroundTint="#F2F2F7"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -30,6 +30,14 @@ class SettingsFragment : Fragment() {
 
         binding.backIcon.setOnClickListener { findNavController().popBackStack() }
 
+        binding.switchButton.setOnClickListener {
+            SharedPref.write("USER_MODE", "host")
+            val intent = Intent(requireActivity(), WelcomeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+            requireActivity().overridePendingTransition(R.anim.enter, R.anim.exit)
+        }
+
         binding.profileButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_profileSettingFragment) }
 
         binding.notificationButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_notificationSettingFragment) }
@@ -37,6 +45,10 @@ class SettingsFragment : Fragment() {
         binding.securityButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_securitySettingFragment) }
 
         binding.versionButton.setOnClickListener { updateDialog() }
+
+        binding.tosButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_termOfServiceFragment) }
+
+        binding.privacyPolicyButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_privacyPolicyFragment) }
 
         binding.signOutButton.setOnClickListener { signOutDialog() }
 

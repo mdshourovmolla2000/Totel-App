@@ -43,11 +43,31 @@
         android:layout_height="1dp"
         android:background="#26000000"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/switchButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetLeft="0dp"
+        android:insetBottom="0dp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="Switch to host mode"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sf_pro_text_bold"
+        app:cornerRadius="@dimen/_20sdp"
+        android:backgroundTint="@color/themeColor"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:padding="@dimen/_12sdp">
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"

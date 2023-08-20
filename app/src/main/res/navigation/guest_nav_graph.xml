@@ -61,6 +61,20 @@
             app:popExitAnim="@anim/pop_exit"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_settingsFragment_to_termOfServiceFragment"
+            app:destination="@id/termOfServiceFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_settingsFragment_to_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"  />
     </fragment>
     <fragment
         android:id="@+id/notificationSettingFragment"
@@ -135,4 +149,14 @@
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
     </fragment>
+    <fragment
+        android:id="@+id/termOfServiceFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.TermOfServiceFragment"
+        android:label="fragment_term_of_service"
+        tools:layout="@layout/fragment_term_of_service" />
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.PrivacyPolicyFragment"
+        android:label="fragment_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" />
 </navigation>
