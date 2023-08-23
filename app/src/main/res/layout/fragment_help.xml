@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.guest_activity.profile_screen.settings_screen.help_screen.HelpFragment"
+    android:orientation="vertical"
+    android:padding="@dimen/_12sdp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How can we help?"
+        android:textSize="@dimen/_25sdp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"/>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. Then let us know the location and how many guests can stay."
+                android:textColor="#272D37"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/inter_regular"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_18sdp">
+
+                <LinearLayout
+                    android:id="@+id/hotelBookingButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_35sdp"
+                    android:background="@drawable/border_with_white_bg_no_radius">
+
+                    <ImageView
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:src="@drawable/help_hotel_booking_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_9sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hotel Booking"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affordable price refers to a cost that is reasonably priced or within one's budgetary lower price compared."
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/border_with_white_bg_no_radius">
+
+                    <ImageView
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:src="@drawable/help_looking_for_partner_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_9sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Looking for Partner"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affordable price refers to a cost that is reasonably priced or within one's budgetary lower price compared."
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/border_with_white_bg_no_radius">
+
+                    <ImageView
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:src="@drawable/help_listing_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_9sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Listing"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affordable price refers to a cost that is reasonably priced or within one's budgetary lower price compared."
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/border_with_white_bg_no_radius">
+
+                    <ImageView
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:src="@drawable/help_self_cleaning_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_9sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Self Cleaning"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affordable price refers to a cost that is reasonably priced or within one's budgetary lower price compared."
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/border_with_white_bg_no_radius">
+
+                    <ImageView
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:src="@drawable/help_refund_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_9sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refund"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affordable price refers to a cost that is reasonably priced or within one's budgetary lower price compared."
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:background="@drawable/border_with_white_bg_no_radius">
+
+                    <ImageView
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:src="@drawable/help_room_sharing_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_9sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Room Sharing"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affordable price refers to a cost that is reasonably priced or within one's budgetary lower price compared."
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F9F9F9"
+                android:padding="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact With Us..."
+                    android:textColor="#272D37"
+                    android:textSize="@dimen/_22sdp"
+                    android:fontFamily="@font/inter_bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Real adventure and travels encompass engaging in thrilling and immersive experiences that take you beyond."
+                    android:textColor="#5F6D7E"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:layout_marginTop="@dimen/_12sdp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_39sdp"
+                        android:layout_height="@dimen/_39sdp"
+                        android:src="@drawable/help_location_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_12sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No: 58 A, East Madison Street, Baltimore, MD, USA 4508"
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_4sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_39sdp"
+                        android:layout_height="@dimen/_39sdp"
+                        android:src="@drawable/help_email_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_12sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="support@total.com"
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_4sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_39sdp"
+                        android:layout_height="@dimen/_39sdp"
+                        android:src="@drawable/help_call_icon"
+                        android:layout_margin="@dimen/_4sdp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/_12sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/inter_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+(0000) 123 456789"
+                            android:textColor="#5F6D7E"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="@dimen/_4sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_4sdp">
+
+    <RelativeLayout
+        android:id="@+id/questionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingVertical="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/questionTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/arrowIcon"
+            android:text="Question"
+            android:textColor="#272D37"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/arrowIcon"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/help_question_arrow_up"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A000000"/>
+
+    <TextView
+        android:id="@+id/answerTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer"
+        android:textColor="#5F6D7E"
+        android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/inter_regular"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -75,6 +75,13 @@
             app:popExitAnim="@anim/pop_exit"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit"  />
+        <action
+            android:id="@+id/action_settingsFragment_to_helpFragment"
+            app:destination="@id/helpFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
     </fragment>
     <fragment
         android:id="@+id/notificationSettingFragment"
@@ -159,4 +166,22 @@
         android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.PrivacyPolicyFragment"
         android:label="fragment_privacy_policy"
         tools:layout="@layout/fragment_privacy_policy" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.help_screen.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_hotelBookingHelpFragment"
+            app:destination="@id/hotelBookingHelpFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelBookingHelpFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.help_screen.HotelBookingHelpFragment"
+        android:label="fragment_hotel_booking_help"
+        tools:layout="@layout/fragment_hotel_booking_help" />
 </navigation>

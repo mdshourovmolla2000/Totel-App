@@ -2,6 +2,7 @@ package com.shourov.totel.utils
 
 import com.denzcoskun.imageslider.models.SlideModel
 import com.shourov.totel.R
+import com.shourov.totel.model.HelpQuestionAnswerModel
 import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.model.HomeAlreadyBookedModel
 import com.shourov.totel.model.MessageModel
@@ -99,6 +100,22 @@ class DemoData {
         itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 0))
         itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 0))
         itemList.add(MessageModel(R.drawable.notification_profile_pic_1, "Stella Marium", "3:29 PM", "Where are you now? I’m waiting for your room key", 0))
+        return itemList
+    }
+
+    fun helpHotelBookingQuestionAnswerData(): List<HelpQuestionAnswerModel> {
+        val itemList: ArrayList<HelpQuestionAnswerModel> = ArrayList()
+        itemList.add(HelpQuestionAnswerModel("Finding and selecting a hotel ", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Checking hotel amenities and facilities", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Understanding hotel policies", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Exploring nearby attractions and activities", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Best time to book a hotel", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Making a reservation", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Cancelling or modifying a reservation", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Loyalty programs and hotel rewards", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Safety and security", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Special requests and accommodations", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        itemList.add(HelpQuestionAnswerModel("Hotel reviews and ratings", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
         return itemList
     }
 }

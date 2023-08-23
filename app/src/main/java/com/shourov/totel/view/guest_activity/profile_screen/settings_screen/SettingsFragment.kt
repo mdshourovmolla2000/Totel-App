@@ -46,6 +46,8 @@ class SettingsFragment : Fragment() {
 
         binding.versionButton.setOnClickListener { updateDialog() }
 
+        binding.helpButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_helpFragment) }
+
         binding.tosButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_termOfServiceFragment) }
 
         binding.privacyPolicyButton.setOnClickListener { findNavController().navigate(R.id.action_settingsFragment_to_privacyPolicyFragment) }
