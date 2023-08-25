@@ -5,6 +5,7 @@ import com.shourov.totel.R
 import com.shourov.totel.model.HelpQuestionAnswerModel
 import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.model.HomeAlreadyBookedModel
+import com.shourov.totel.model.HomeLookingForPartnerModel
 import com.shourov.totel.model.MessageModel
 import com.shourov.totel.model.NotificationModel
 import com.shourov.totel.model.OnBoardingModel
@@ -36,6 +37,32 @@ class DemoData {
             SlideModel(R.drawable.home_already_booked_hotel_pic_1),
             SlideModel(R.drawable.home_already_booked_hotel_pic_2)
         ), "Brunel's SS Great Britain", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "25 Jan - 27 Jan", "\$650/Night"))
+        return itemList
+    }
+
+    fun homeLookingForPartnerData(): List<HomeLookingForPartnerModel> {
+        val itemList: ArrayList<HomeLookingForPartnerModel> = ArrayList()
+        itemList.add(
+            HomeLookingForPartnerModel(arrayListOf(
+            SlideModel(R.drawable.home_looking_for_partner_profile_1),
+            SlideModel(R.drawable.home_looking_for_partner_profile_2),
+            SlideModel(R.drawable.home_looking_for_partner_profile_3)
+            ), "Alex Norman", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "Bristol, Bath & London", "20th March, 2023", "\$650-\$800")
+        )
+        itemList.add(
+            HomeLookingForPartnerModel(arrayListOf(
+                SlideModel(R.drawable.home_looking_for_partner_profile_2),
+                SlideModel(R.drawable.home_looking_for_partner_profile_3),
+                SlideModel(R.drawable.home_looking_for_partner_profile_1)
+            ), "Alex Norman", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "Bristol, Bath & London", "20th March, 2023", "\$650-\$800")
+        )
+        itemList.add(
+            HomeLookingForPartnerModel(arrayListOf(
+                SlideModel(R.drawable.home_looking_for_partner_profile_3),
+                SlideModel(R.drawable.home_looking_for_partner_profile_1),
+                SlideModel(R.drawable.home_looking_for_partner_profile_2)
+            ), "Alex Norman", "Great Western Dockyard, Gas Ferry Rd, Bristol BS1 6TY", "Bristol, Bath & London", "20th March, 2023", "\$650-\$800")
+        )
         return itemList
     }
 
