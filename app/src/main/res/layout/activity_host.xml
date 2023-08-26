@@ -6,4 +6,112 @@
     android:layout_height="match_parent"
     tools:context=".view.host_activity.HostActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationTopBorder"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/host_nav_graph" />
+
+    <View
+        android:id="@+id/bottomNavigationTopBorder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationMenuLayout"
+        android:background="#F2F2F7"/>
+
+    <LinearLayout
+        android:id="@+id/bottomNavigationMenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_43sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/bottomNavigationHomeMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/bottomNavigationHomeMenuIcon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bottom_navigation_menu_home_icon"
+                app:tint="@color/themeColor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomNavigationBookingsMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/bottomNavigationBookingsMenuIcon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bottom_navigation_menu_bookings_icon"
+                app:tint="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomNavigationNotificationMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/bottomNavigationNotificationMenuIcon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bottom_navigation_menu_notification_icon"
+                app:tint="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomNavigationSettingsMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/bottomNavigationProfileMenuIcon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bottom_navigation_menu_profile_icon"
+                app:tint="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

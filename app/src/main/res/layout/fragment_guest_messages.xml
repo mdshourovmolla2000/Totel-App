@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.guest_activity.bookings_screen.messages_screen.MessagesFragment"
+    tools:context=".view.guest_activity.bookings_screen.messages_screen.GuestMessagesFragment"
     android:orientation="vertical">
 
     <RelativeLayout

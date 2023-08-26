@@ -2,4 +2,24 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph" />
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hostHomeFragment">
+    <fragment
+        android:id="@+id/hostHomeFragment"
+        android:name="com.shourov.totel.view.host_activity.home_screen.HostHomeFragment"
+        android:label="fragment_host_home"
+        tools:layout="@layout/fragment_host_home" >
+        <action
+            android:id="@+id/action_hostHomeFragment_to_hostProfileFragment"
+            app:destination="@id/hostProfileFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostProfileFragment"
+        android:name="com.shourov.totel.view.host_activity.profile_screen.HostProfileFragment"
+        android:label="fragment_host_profile"
+        tools:layout="@layout/fragment_host_profile" />
+</navigation>

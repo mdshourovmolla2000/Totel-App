@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.host_activity.profile_screen.HostProfileFragment"
+    android:padding="@dimen/_15sdp">
+
+    <TextView
+        android:id="@+id/titleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25sdp"
+        android:fontFamily="@font/inter_bold"/>
+
+    <LinearLayout
+        android:id="@+id/profilePicSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/titleTextview"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center_vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePicImageview"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/host_profile_picture"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/_7sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sihyun Chae"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/sf_pro_text_bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="View and edit profile"
+                android:textColor="@color/themeColor"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/sf_pro_text_regular"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/profilePicSection"
+        android:background="#C4C4C4"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/switchButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@id/line1"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetLeft="0dp"
+        android:insetBottom="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Switch to guest mode"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sf_pro_text_bold"
+        app:cornerRadius="@dimen/_20sdp"
+        android:backgroundTint="@color/themeColor"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/switchButton"
+        android:layout_above="@id/line2"
+        android:layout_marginVertical="@dimen/_25sdp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/accountButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_9sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/accountIcon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/host_profile_account_icon"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/accountTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/accountIcon"
+                    android:text="Account"
+                    android:textColor="#3F3F3F"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/accountArrowIcon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/host_profile_arrow_down_icon"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/accountSubSectionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/bookingsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/host_profile_bookings_icon"
+                        app:tint="#A6A6A6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bookings"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/inboxButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_7sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/host_profile_inbox_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inbox"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/spaceButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_7sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/host_profile_space_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Space"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/businessButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_7sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/host_profile_business_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Business"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transactionHistoryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_9sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/host_profile_transaction_history_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction history"
+                    android:textColor="#3F3F3F"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginStart="@dimen/_12sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/taxInformationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_9sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/host_profile_tax_information_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tax information"
+                    android:textColor="#3F3F3F"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginStart="@dimen/_12sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/giftCardButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_9sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/host_profile_gift_card_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gift card"
+                    android:textColor="#3F3F3F"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginStart="@dimen/_12sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/howTotelWorksButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_9sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/host_profile_how_totel_works_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How Totel works"
+                    android:textColor="#3F3F3F"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginStart="@dimen/_12sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contactSupportButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_9sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/host_profile_contact_support_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact support"
+                    android:textColor="#3F3F3F"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginStart="@dimen/_12sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/legalButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_9sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/host_profile_legal_icon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Legal"
+                    android:textColor="#3F3F3F"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_marginStart="@dimen/_12sdp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/logoutButton"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="#C4C4C4"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:insetBottom="0dp"
+        android:insetLeft="0dp"
+        android:insetRight="0dp"
+        android:insetTop="0dp"
+        android:text="Logout"
+        android:textColor="#EB2D25"
+        android:textSize="@dimen/_11sdp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:backgroundTint="#33EB2D25"
+        app:icon="@drawable/logout_icon"
+        app:iconTint="#EB2D25"
+        app:iconSize="@dimen/_17sdp"
+        app:iconGravity="textStart"
+        app:iconPadding="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_32sdp"
+        android:paddingVertical="@dimen/_11sdp"/>
+
+</RelativeLayout>
