@@ -21,5 +21,18 @@
         android:id="@+id/hostProfileFragment"
         android:name="com.shourov.totel.view.host_activity.profile_screen.HostProfileFragment"
         android:label="fragment_host_profile"
-        tools:layout="@layout/fragment_host_profile" />
+        tools:layout="@layout/fragment_host_profile" >
+        <action
+            android:id="@+id/action_hostProfileFragment_to_hostBookingsFragment"
+            app:destination="@id/hostBookingsFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostBookingsFragment"
+        android:name="com.shourov.totel.view.host_activity.profile_screen.account_sub_section.bookings_screen.HostBookingsFragment"
+        android:label="fragment_host_bookings"
+        tools:layout="@layout/fragment_host_bookings" />
 </navigation>

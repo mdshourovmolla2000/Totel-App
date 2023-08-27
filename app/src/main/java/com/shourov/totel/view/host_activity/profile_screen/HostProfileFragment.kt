@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.shourov.totel.R
 import com.shourov.totel.databinding.BottomSheetSignOutBinding
@@ -20,12 +21,16 @@ class HostProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentHostProfileBinding
 
+    private var isAccountSubSectionOpen = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHostProfileBinding.inflate(inflater, container, false)
+
+        updateView()
 
         binding.switchButton.setOnClickListener {
             SharedPref.write("USER_MODE", "guest")
@@ -36,22 +41,29 @@ class HostProfileFragment : Fragment() {
         }
 
         binding.accountButton.setOnClickListener {
-            if (binding.accountSubSectionLayout.visibility == View.GONE) {
-                binding.accountSubSectionLayout.visibility = View.VISIBLE
-                binding.accountArrowIcon.setImageResource(R.drawable.host_profile_arrow_up_icon)
-                binding.accountTextview.setTextColor(ContextCompat.getColor(requireContext(), R.color.themeColor))
-                binding.accountIcon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.themeColor))
-            } else {
-                binding.accountSubSectionLayout.visibility = View.GONE
-                binding.accountArrowIcon.setImageResource(R.drawable.host_profile_arrow_down_icon)
-                binding.accountTextview.setTextColor(Color.parseColor("#3F3F3F"))
-                binding.accountIcon.clearColorFilter()
-            }
+            isAccountSubSectionOpen = !isAccountSubSectionOpen
+            updateView()
         }
+
+        binding.bookingsButton.setOnClickListener { findNavController().navigate(R.id.action_hostProfileFragment_to_hostBookingsFragment) }
 
         binding.logoutButton.setOnClickListener { signOutDialog() }
 
         return binding.root
+    }
+
+    private fun updateView() {
+        if (isAccountSubSectionOpen) {
+            binding.accountSubSectionLayout.visibility = View.VISIBLE
+            binding.accountArrowIcon.setImageResource(R.drawable.host_profile_arrow_up_icon)
+            binding.accountTextview.setTextColor(ContextCompat.getColor(requireContext(), R.color.themeColor))
+            binding.accountIcon.setColorFilter(ContextCompat.getColor(requireContext(), R.color.themeColor))
+        } else {
+            binding.accountSubSectionLayout.visibility = View.GONE
+            binding.accountArrowIcon.setImageResource(R.drawable.host_profile_arrow_down_icon)
+            binding.accountTextview.setTextColor(Color.parseColor("#3F3F3F"))
+            binding.accountIcon.clearColorFilter()
+        }
     }
 
     private fun signOutDialog() {

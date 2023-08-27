@@ -2,6 +2,7 @@ package com.shourov.totel.utils
 
 import com.denzcoskun.imageslider.models.SlideModel
 import com.shourov.totel.R
+import com.shourov.totel.model.BookingModel
 import com.shourov.totel.model.HelpQuestionAnswerModel
 import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.model.HomeAlreadyBookedModel
@@ -143,6 +144,19 @@ class DemoData {
         itemList.add(HelpQuestionAnswerModel("Safety and security", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
         itemList.add(HelpQuestionAnswerModel("Special requests and accommodations", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
         itemList.add(HelpQuestionAnswerModel("Hotel reviews and ratings", "In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. ", false))
+        return itemList
+    }
+
+    fun hostBookingsBookedData(): List<BookingModel> {
+        val itemList: ArrayList<BookingModel> = ArrayList()
+        itemList.add(BookingModel(1, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(2, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(3, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(4, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(5, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(6, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(7, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(8, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
         return itemList
     }
 }
