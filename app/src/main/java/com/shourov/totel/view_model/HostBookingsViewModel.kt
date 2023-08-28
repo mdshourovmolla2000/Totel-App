@@ -12,4 +12,10 @@ class HostBookingsViewModel(private val repository: HostBookingsRepository) : Vi
         get() = _bookingsBookedListLiveData
 
     fun getBookingsBookedList() = _bookingsBookedListLiveData.postValue(repository.getBookingsBookedList())
+
+    private val _bookingsHistoryListLiveData = MutableLiveData<List<BookingModel?>>()
+    val bookingsHistoryListLiveData: LiveData<List<BookingModel?>>
+        get() = _bookingsHistoryListLiveData
+
+    fun getBookingsHistoryList() = _bookingsHistoryListLiveData.postValue(repository.getBookingsHistoryList())
 }

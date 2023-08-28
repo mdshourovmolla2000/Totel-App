@@ -5,4 +5,6 @@ import com.shourov.totel.utils.DemoData
 
 class HostBookingsRepository {
     fun getBookingsBookedList(): List<BookingModel?> = DemoData().hostBookingsBookedData()
+
+    fun getBookingsHistoryList(): List<BookingModel?> = DemoData().hostBookingsHistoryData()
 }

@@ -159,4 +159,17 @@ class DemoData {
         itemList.add(BookingModel(8, R.drawable.host_booking_booked_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
         return itemList
     }
+
+    fun hostBookingsHistoryData(): List<BookingModel> {
+        val itemList: ArrayList<BookingModel> = ArrayList()
+        itemList.add(BookingModel(1, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(2, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(3, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(4, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(5, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(6, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(7, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        itemList.add(BookingModel(8, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        return itemList
+    }
 }

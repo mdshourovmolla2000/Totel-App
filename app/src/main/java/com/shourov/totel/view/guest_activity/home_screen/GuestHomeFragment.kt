@@ -46,18 +46,24 @@ class GuestHomeFragment : Fragment() {
         binding.homeLookingForPartnerRecyclerview.adapter = GuestHomeLookingForPartnerListAdapter(homeLookingForPartnerList)
 
         binding.alreadyBookedButton.setOnClickListener {
-            currentlySelected = "ALREADY_BOOKED"
-            updateView()
+            if (currentlySelected != "ALREADY_BOOKED") {
+                currentlySelected = "ALREADY_BOOKED"
+                updateView()
+            }
         }
 
         binding.lookingForPartnerButton.setOnClickListener {
-            currentlySelected = "LOOKING_FOR_PARTNER"
-            updateView()
+            if (currentlySelected != "LOOKING_FOR_PARTNER") {
+                currentlySelected = "LOOKING_FOR_PARTNER"
+                updateView()
+            }
         }
 
         binding.rentedRoomsButton.setOnClickListener {
-            currentlySelected = "RENTED_ROOMS"
-            updateView()
+            if (currentlySelected != "RENTED_ROOMS") {
+                currentlySelected = "RENTED_ROOMS"
+                updateView()
+            }
         }
 
         return binding.root
