@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:paddingHorizontal="@dimen/_12sdp"
+    android:paddingTop="@dimen/_12sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePicImageview"
+        android:layout_width="@dimen/_44sdp"
+        android:layout_height="@dimen/_44sdp"
+        android:src="@drawable/image_placeholder_square"
+        android:layout_alignParentStart="true"/>
+
+    <LinearLayout
+        android:id="@+id/mainSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/profilePicImageview"
+        android:layout_marginStart="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/userNameTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/timeTextview"
+                android:layout_alignParentStart="true"
+                android:text="Stella Marium"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf_pro_text_regular"/>
+
+            <TextView
+                android:id="@+id/timeTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:text="3:29 PM"
+                android:textColor="#993C3C43"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/sf_pro_text_regular"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp">
+
+            <TextView
+                android:id="@+id/messageTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Where are you now? I’m waiting for your room key"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="#993C3C43"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:layout_toStartOf="@id/newMessageCounter"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_12sdp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/newMessageCounter"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                app:cardBackgroundColor="@color/themeColor"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/_9sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/newMessageCountTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/sf_pro_text_regular"
+                    android:layout_gravity="center"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F2F2F7"
+        android:layout_below="@id/mainSection"
+        android:layout_marginTop="@dimen/_9sdp"/>
+</RelativeLayout>

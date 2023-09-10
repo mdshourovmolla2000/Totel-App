@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.host_activity.home_screen.posting_screen.HostPostingPlaceTypeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/topSectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginVertical="@dimen/_11sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_25sdp"
+        app:cardElevation="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/_6sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/host_posting_search_icon"
+                android:layout_centerVertical="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@id/searchIcon"
+                android:layout_toStartOf="@id/filterIcon"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_centerVertical="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Where to?"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/_9sdp"
+                    android:background="@null"
+                    android:inputType="text"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Any where"
+                        android:textColor="#8F8F8F"
+                        android:textSize="@dimen/_8sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Any week"
+                        android:textColor="#8F8F8F"
+                        android:textSize="@dimen/_8sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Add guests"
+                        android:textColor="#8F8F8F"
+                        android:textSize="@dimen/_8sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/filterIcon"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_border_bg">
+
+                    <ImageView
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:src="@drawable/host_posting_filter_icon"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topSectionLayout"
+        android:layout_above="@id/bottomSectionLayout"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Which of these best describes your place?"
+                android:textSize="@dimen/_25sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. Then let us know the location and how many guests can stay."
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_regular"
+                android:layout_marginTop="@dimen/_12sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_25sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/hotelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/hotelButtonBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_with_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/hotelIcon"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:src="@drawable/host_posting_type_hotel_icon"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/hotelTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hotel"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/apartmentButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="@dimen/_6sdp">
+
+                    <LinearLayout
+                        android:id="@+id/apartmentButtonBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_with_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/apartmentIcon"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/host_posting_type_apartment_icon"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/apartmentTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apartment"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/houseButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/houseButtonBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_with_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/houseIcon"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/host_posting_type_house_icon"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/houseTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="House"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/flatButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="@dimen/_6sdp">
+
+                    <LinearLayout
+                        android:id="@+id/flatButtonBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_with_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/flatIcon"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/host_posting_type_flat_icon"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/flatTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Flat"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottomSectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FCFCFD">
+
+        <View
+            android:id="@+id/bottomTopLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EAEBF0"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_toStartOf="@id/continueButton"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Back"
+                android:textColor="#272D37"
+                android:textSize="@dimen/_9sdp"
+                android:fontFamily="@font/inter_bold"
+                android:background="@drawable/border_with_white_bg"
+                android:paddingVertical="@dimen/_6sdp"
+                android:paddingHorizontal="@dimen/_17sdp"
+                android:gravity="center"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_centerVertical="true"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetLeft="0dp"
+            android:insetBottom="0dp"
+            android:text="Continue"
+            android:textSize="@dimen/_9sdp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/inter_bold"
+            android:backgroundTint="#574EFA"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:paddingHorizontal="@dimen/_17sdp"
+            android:layout_below="@id/bottomTopLine"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

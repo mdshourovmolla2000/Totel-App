@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.host_activity.space_screen.HostSpaceFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.host_activity.profile_screen.account_sub_section.space_screen.HostSpaceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backIcon"
+        android:layout_width="@dimen/_31sdp"
+        android:layout_height="@dimen/_31sdp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetLeft="0dp"
+        android:insetBottom="0dp"
+        app:icon="@drawable/arrow_left_icon"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="@dimen/_18sdp"
+        app:iconTint="@color/black"
+        app:backgroundTint="#F2F2F7"
+        android:layout_margin="@dimen/_10sdp"/>
+
     <TextView
+        android:id="@+id/titleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backIcon"
+        android:text="Space"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25sdp"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginHorizontal="@dimen/_15sdp"/>
+
+    <LinearLayout
+        android:id="@+id/tabSelectorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/titleTextview"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:background="#F6F9FF">
+
+        <TextView
+            android:id="@+id/listingsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/host_bg_end_rounded"
+            android:text="Listings"
+            android:textColor="@color/themeColor"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:paddingVertical="@dimen/_8sdp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/claimsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Claims"
+            android:textColor="#3F3F3F"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:layout_below="@id/tabSelectorLayout"
+        android:background="#F2F2F2">
 
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listingsListRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/claimsListRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

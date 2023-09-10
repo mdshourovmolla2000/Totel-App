@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.host_activity.home_screen.HostHomeFragment">
+    tools:context=".view.host_activity.home_screen.posting_screen.HostPostingPlaceLocationFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/topSectionLayout"
@@ -105,20 +105,20 @@
                 android:foreground="?attr/selectableItemBackground"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true">
-                
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/rounded_border_bg">
-                    
+
                     <ImageView
                         android:layout_width="@dimen/_22sdp"
                         android:layout_height="@dimen/_22sdp"
                         android:src="@drawable/host_posting_filter_icon"
                         android:layout_centerInParent="true"/>
-                    
+
                 </RelativeLayout>
-                
+
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
@@ -142,42 +142,142 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Step 1"
-                android:textSize="@dimen/_11sdp"
+                android:text="Where's your place located?"
+                android:textSize="@dimen/_25sdp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/inter_bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tell us about your place"
-                android:textSize="@dimen/_25sdp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/inter_bold"
-                android:layout_marginTop="@dimen/_6sdp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="In this step, we'll ask you which type of stays you have and if guests will book the entire place or just a room. Then let us know the location and how many guests can stay."
-                android:textSize="@dimen/_12sdp"
+                android:text="Your address is only shared with guests after they’ve made a reservation."
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/inter_regular"
-                android:layout_marginTop="@dimen/_6sdp"/>
+                android:layout_marginTop="@dimen/_12sdp"/>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_height="match_parent"
                 app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="@dimen/_18sdp">
+                app:cardCornerRadius="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_25sdp">
 
-                <ImageView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/host_posting_apartment_image" />
+                    android:layout_height="match_parent"
+                    android:background="#E6E6E6"
+                    android:padding="@dimen/_12sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fullScreenButton"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_3sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                        
+                        <ImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_map_full_screen_icon"
+                            android:layout_gravity="center"/>
+                        
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_36sdp"
+                        app:cardElevation="@dimen/_5sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_18sdp"
+                        android:layout_toStartOf="@id/fullScreenButton"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_12sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/locationIcon"
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/host_posting_map_location_icon"/>
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Enter your address"
+                                android:textColor="#272D37"
+                                android:textSize="@dimen/_11sdp"
+                                android:textColorHint="#272D37"
+                                android:layout_marginHorizontal="@dimen/_12sdp"
+                                android:inputType="text"
+                                android:fontFamily="@font/inter_bold"
+                                android:background="@null"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/zoomInButton"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_3sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_map_zoom_in_icon"
+                            android:layout_gravity="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/zoomOutButton"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_toStartOf="@id/zoomInButton"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_3sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_map_zoom_out_icon"
+                            android:layout_gravity="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -198,10 +298,38 @@
             android:layout_height="1dp"
             android:background="#EAEBF0"/>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_toStartOf="@id/continueButton"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Back"
+                android:textColor="#272D37"
+                android:textSize="@dimen/_9sdp"
+                android:fontFamily="@font/inter_bold"
+                android:background="@drawable/border_with_white_bg"
+                android:paddingVertical="@dimen/_6sdp"
+                android:paddingHorizontal="@dimen/_17sdp"
+                android:gravity="center"/>
+
+        </androidx.cardview.widget.CardView>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/continueButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_30sdp"
             android:layout_centerVertical="true"
             android:insetTop="0dp"
             android:insetRight="0dp"

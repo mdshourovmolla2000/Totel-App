@@ -1,14 +1,470 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.host_activity.business_screen.HostBusinessFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.host_activity.profile_screen.account_sub_section.business_screen.HostBusinessFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backIcon"
+        android:layout_width="@dimen/_31sdp"
+        android:layout_height="@dimen/_31sdp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetLeft="0dp"
+        android:insetBottom="0dp"
+        app:icon="@drawable/arrow_left_icon"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconSize="@dimen/_18sdp"
+        app:iconTint="@color/black"
+        app:backgroundTint="#F2F2F7"
+        android:layout_margin="@dimen/_10sdp"/>
+
     <TextView
+        android:id="@+id/titleTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backIcon"
+        android:text="Business"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25sdp"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginHorizontal="@dimen/_15sdp"/>
+
+    <LinearLayout
+        android:id="@+id/tabSelectorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/titleTextview"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:background="#F6F9FF">
+
+        <TextView
+            android:id="@+id/earningsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/host_bg_end_rounded"
+            android:text="Earnings"
+            android:textColor="@color/themeColor"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:paddingVertical="@dimen/_8sdp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/reviewsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Reviews"
+            android:textColor="#3F3F3F"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/sf_pro_text_regular"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/earningsSectionLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@id/tabSelectorLayout"
+        android:fillViewport="true"
+        android:visibility="gone">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/filterIcon"
+                    android:text="$100 earned in 2023"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:fontFamily="@font/sf_pro_text_bold"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/filterIcon"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:insetTop="0dp"
+                    app:icon="@drawable/host_bookings_filter_icon"
+                    app:iconTint="@color/white"
+                    app:iconSize="@dimen/_15sdp"
+                    app:iconPadding="0dp"
+                    app:iconGravity="textStart"
+                    app:cornerRadius="@dimen/_8sdp"
+                    app:backgroundTint="@color/themeColor"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All earnings adjustments included"
+                android:textSize="@dimen/_9sdp"
+                android:textColor="#616161"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_4sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#F8F9FF"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:padding="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:weightSum="5">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="4"
+                        android:background="#1C0057FF"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$4000"
+                        android:textSize="@dimen/_9sdp"
+                        android:textColor="@color/themeColor"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:weightSum="5"
+                    android:layout_marginTop="@dimen/_13sdp">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="4"
+                        android:background="#1C0057FF"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$3000"
+                        android:textSize="@dimen/_9sdp"
+                        android:textColor="@color/themeColor"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:weightSum="5"
+                    android:layout_marginTop="@dimen/_13sdp">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="4"
+                        android:background="#1C0057FF"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$2000"
+                        android:textSize="@dimen/_9sdp"
+                        android:textColor="@color/themeColor"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:weightSum="5"
+                    android:layout_marginTop="@dimen/_13sdp">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="4"
+                        android:background="#1C0057FF"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$1000"
+                        android:textSize="@dimen/_9sdp"
+                        android:textColor="@color/themeColor"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:weightSum="5"
+                    android:layout_marginTop="@dimen/_29sdp">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="3dp"
+                        android:layout_weight="4"
+                        android:background="@color/themeColor"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$0"
+                        android:textSize="@dimen/_9sdp"
+                        android:textColor="@color/themeColor"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_8sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Jan"
+                        android:textColor="@color/themeColor"
+                        android:textSize="@dimen/_9sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Jul"
+                        android:textColor="@color/themeColor"
+                        android:textSize="@dimen/_9sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_18sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardBackgroundColor="#00A0FF"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Booking earnings"
+                        android:textColor="#3F3F3F"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_4sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_6sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardBackgroundColor="#FF9C00"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upcoming earnings"
+                        android:textColor="#3F3F3F"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_4sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_6sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardBackgroundColor="#06E775"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reimbursements"
+                        android:textColor="#3F3F3F"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_4sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_6sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardBackgroundColor="#C31162"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_bold"
+                        android:layout_marginStart="@dimen/_12sdp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missed earnings"
+                        android:textColor="#3F3F3F"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:layout_marginStart="@dimen/_4sdp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/reviewsSectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/tabSelectorLayout"
+        android:background="#F2F2F2"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviewsListRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

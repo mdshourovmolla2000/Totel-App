@@ -7,10 +7,13 @@ import com.shourov.totel.model.HelpQuestionAnswerModel
 import com.shourov.totel.model.HobbyModel
 import com.shourov.totel.model.HomeAlreadyBookedModel
 import com.shourov.totel.model.HomeLookingForPartnerModel
+import com.shourov.totel.model.HostBusinessReviewModel
 import com.shourov.totel.model.MessageModel
 import com.shourov.totel.model.NotificationModel
 import com.shourov.totel.model.OnBoardingModel
 import com.shourov.totel.model.ProfileAlreadyBookedModel
+import com.shourov.totel.model.SpaceClaimModel
+import com.shourov.totel.model.SpaceListingModel
 
 class DemoData {
     fun onBoardingData(): List<OnBoardingModel> {
@@ -170,6 +173,102 @@ class DemoData {
         itemList.add(BookingModel(6, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
         itemList.add(BookingModel(7, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
         itemList.add(BookingModel(8, R.drawable.host_booking_history_profile_pic, "Jacky Shopy", "28 Apr 2022 - 10.00 AM", "25 Apr 2022 - 2.00 PM", "Booking completed", "32\$/Day"))
+        return itemList
+    }
+
+    fun hostSpaceListingData(): List<SpaceListingModel> {
+        val itemList: ArrayList<SpaceListingModel> = ArrayList()
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        itemList.add(
+            SpaceListingModel(arrayListOf(
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image),
+                SlideModel(R.drawable.host_space_listing_slider_image)
+            ), "Cerulean Tower Hotel", 2, 4.5, "75\$")
+        )
+        return itemList
+    }
+
+    fun hostSpaceClaimData(): List<SpaceClaimModel> {
+        val itemList: ArrayList<SpaceClaimModel> = ArrayList()
+        itemList.add(SpaceClaimModel(R.drawable.host_space_claim_image, "Cerulean Tower Hotel", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in...", "75\$"))
+        itemList.add(SpaceClaimModel(R.drawable.host_space_claim_image, "Cerulean Tower Hotel", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in...", "75\$"))
+        itemList.add(SpaceClaimModel(R.drawable.host_space_claim_image, "Cerulean Tower Hotel", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in...", "75\$"))
+        itemList.add(SpaceClaimModel(R.drawable.host_space_claim_image, "Cerulean Tower Hotel", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in...", "75\$"))
+        itemList.add(SpaceClaimModel(R.drawable.host_space_claim_image, "Cerulean Tower Hotel", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in...", "75\$"))
+        itemList.add(SpaceClaimModel(R.drawable.host_space_claim_image, "Cerulean Tower Hotel", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in...", "75\$"))
+        itemList.add(SpaceClaimModel(R.drawable.host_space_claim_image, "Cerulean Tower Hotel", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in...", "75\$"))
+        return itemList
+    }
+
+    fun hostBusinessReviewData(): List<HostBusinessReviewModel> {
+        val itemList: ArrayList<HostBusinessReviewModel> = ArrayList()
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
+        itemList.add(HostBusinessReviewModel(R.drawable.host_business_review_user_profile_pic, "Mishell De Alwis", 4.5, "OGF123546", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla ligula in diam aliquet feugiat. Cras eu aliquet dui. Proin luctus vestibulum lorem ac venenatis.", 452, 98, "1 day ago"))
         return itemList
     }
 }

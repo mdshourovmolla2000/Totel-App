@@ -16,6 +16,13 @@
             app:popExitAnim="@anim/pop_exit"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_hostHomeFragment_to_hostPostingPlaceTypeFragment"
+            app:destination="@id/hostPostingPlaceTypeFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
     </fragment>
     <fragment
         android:id="@+id/hostProfileFragment"
@@ -29,10 +36,128 @@
             app:popExitAnim="@anim/pop_exit"
             app:enterAnim="@anim/enter"
             app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_hostProfileFragment_to_profileSettingFragment"
+            app:destination="@id/profileSettingFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_hostProfileFragment_to_hostInboxFragment"
+            app:destination="@id/hostInboxFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_hostProfileFragment_to_hostSpaceFragment"
+            app:destination="@id/hostSpaceFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+        <action
+            android:id="@+id/action_hostProfileFragment_to_hostBusinessFragment"
+            app:destination="@id/hostBusinessFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
     </fragment>
     <fragment
         android:id="@+id/hostBookingsFragment"
         android:name="com.shourov.totel.view.host_activity.profile_screen.account_sub_section.bookings_screen.HostBookingsFragment"
         android:label="fragment_host_bookings"
         tools:layout="@layout/fragment_host_bookings" />
+    <fragment
+        android:id="@+id/profileSettingFragment"
+        android:name="com.shourov.totel.view.guest_activity.profile_screen.settings_screen.ProfileSettingFragment"
+        android:label="fragment_profile_setting"
+        tools:layout="@layout/fragment_profile_setting" />
+    <fragment
+        android:id="@+id/hostInboxFragment"
+        android:name="com.shourov.totel.view.host_activity.profile_screen.account_sub_section.inbox_screen.HostInboxFragment"
+        android:label="fragment_host_inbox"
+        tools:layout="@layout/fragment_host_inbox" />
+    <fragment
+        android:id="@+id/hostSpaceFragment"
+        android:name="com.shourov.totel.view.host_activity.profile_screen.account_sub_section.space_screen.HostSpaceFragment"
+        android:label="fragment_host_space"
+        tools:layout="@layout/fragment_host_space" />
+    <fragment
+        android:id="@+id/hostBusinessFragment"
+        android:name="com.shourov.totel.view.host_activity.profile_screen.account_sub_section.business_screen.HostBusinessFragment"
+        android:label="fragment_host_business"
+        tools:layout="@layout/fragment_host_business" />
+    <fragment
+        android:id="@+id/hostPostingPlaceTypeFragment"
+        android:name="com.shourov.totel.view.host_activity.home_screen.posting_screen.HostPostingPlaceTypeFragment"
+        android:label="fragment_host_posting_place_type"
+        tools:layout="@layout/fragment_host_posting_place_type" >
+        <action
+            android:id="@+id/action_hostPostingPlaceTypeFragment_to_hostPostingRoomTypeFragment"
+            app:destination="@id/hostPostingRoomTypeFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostPostingRoomTypeFragment"
+        android:name="com.shourov.totel.view.host_activity.home_screen.posting_screen.HostPostingRoomTypeFragment"
+        android:label="fragment_host_posting_room_type"
+        tools:layout="@layout/fragment_host_posting_room_type" >
+        <action
+            android:id="@+id/action_hostPostingRoomTypeFragment_to_hostPostingPlaceLocationFragment"
+            app:destination="@id/hostPostingPlaceLocationFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostPostingPlaceLocationFragment"
+        android:name="com.shourov.totel.view.host_activity.home_screen.posting_screen.HostPostingPlaceLocationFragment"
+        android:label="fragment_host_posting_place_location"
+        tools:layout="@layout/fragment_host_posting_place_location" >
+        <action
+            android:id="@+id/action_hostPostingPlaceLocationFragment_to_hostPostingWhoCanStayFragment"
+            app:destination="@id/hostPostingWhoCanStayFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostPostingWhoCanStayFragment"
+        android:name="com.shourov.totel.view.host_activity.home_screen.posting_screen.HostPostingWhoCanStayFragment"
+        android:label="fragment_host_posting_who_can_stay"
+        tools:layout="@layout/fragment_host_posting_who_can_stay" >
+        <action
+            android:id="@+id/action_hostPostingWhoCanStayFragment_to_hostPostingStep2Fragment"
+            app:destination="@id/hostPostingStep2Fragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostPostingStep2Fragment"
+        android:name="com.shourov.totel.view.host_activity.home_screen.posting_screen.HostPostingStep2Fragment"
+        android:label="fragment_host_posting_step2"
+        tools:layout="@layout/fragment_host_posting_step2" >
+        <action
+            android:id="@+id/action_hostPostingStep2Fragment_to_hostPostingAddPriceFragment"
+            app:destination="@id/hostPostingAddPriceFragment"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostPostingAddPriceFragment"
+        android:name="com.shourov.totel.view.host_activity.home_screen.posting_screen.HostPostingAddPriceFragment"
+        android:label="fragment_host_posting_add_price"
+        tools:layout="@layout/fragment_host_posting_add_price" />
 </navigation>

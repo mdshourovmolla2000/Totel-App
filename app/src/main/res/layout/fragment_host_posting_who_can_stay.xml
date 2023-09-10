@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.host_activity.home_screen.posting_screen.HostPostingWhoCanStayFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/topSectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginVertical="@dimen/_11sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_25sdp"
+        app:cardElevation="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/_6sdp"
+            android:layout_marginHorizontal="@dimen/_12sdp">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/host_posting_search_icon"
+                android:layout_centerVertical="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@id/searchIcon"
+                android:layout_toStartOf="@id/filterIcon"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_centerVertical="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Where to?"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/_9sdp"
+                    android:background="@null"
+                    android:inputType="text"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Any where"
+                        android:textColor="#8F8F8F"
+                        android:textSize="@dimen/_8sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="start"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Any week"
+                        android:textColor="#8F8F8F"
+                        android:textSize="@dimen/_8sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="center_horizontal"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Add guests"
+                        android:textColor="#8F8F8F"
+                        android:textSize="@dimen/_8sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:gravity="end"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/filterIcon"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_border_bg">
+
+                    <ImageView
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:src="@drawable/host_posting_filter_icon"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topSectionLayout"
+        android:layout_above="@id/bottomSectionLayout"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Who can stay in your place?"
+                android:textSize="@dimen/_25sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You'll add more details later, such as bed types."
+                android:textSize="@dimen/_14sdp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_regular"
+                android:layout_marginTop="@dimen/_12sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Who can stay there?"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="#919BA7"
+                android:fontFamily="@font/inter_regular"
+                android:layout_marginTop="@dimen/_25sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/maleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/maleButtonBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_with_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/maleIcon"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/host_posting_male_icon"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/maleTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Male"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/femaleButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_marginStart="@dimen/_6sdp">
+
+                    <LinearLayout
+                        android:id="@+id/femaleButtonBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_with_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/femaleIcon"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/host_posting_female_icon"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/femaleTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Female"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bothButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/bothButtonBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_with_white_bg"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/bothIcon"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/host_posting_both_icon"
+                            android:adjustViewBounds="true"/>
+
+                        <TextView
+                            android:id="@+id/bothTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Both can stay"
+                            android:textColor="#272D37"
+                            android:textSize="@dimen/_11sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginStart="@dimen/_6sdp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharable Details"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="#919BA7"
+                android:fontFamily="@font/inter_regular"
+                android:layout_marginTop="@dimen/_15sdp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/guestsPlusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_plus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/guestCounterTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/guestsPlusButton"
+                    android:layout_marginHorizontal="@dimen/_14sdp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/guestsMinusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_toStartOf="@id/guestCounterTextview"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_minus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Guests"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/guestsMinusButton"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sharable Details"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="#919BA7"
+                android:fontFamily="@font/inter_regular"
+                android:layout_marginTop="@dimen/_15sdp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bedroomPlusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_plus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/bedroomCounterTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="04"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/bedroomPlusButton"
+                    android:layout_marginHorizontal="@dimen/_14sdp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bedroomMinusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_toStartOf="@id/bedroomCounterTextview"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_minus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Bedrooms"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/bedroomMinusButton"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bedPlusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_plus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/bedCounterTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/bedPlusButton"
+                    android:layout_marginHorizontal="@dimen/_14sdp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bedMinusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_toStartOf="@id/bedCounterTextview"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_minus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Beds"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/bedMinusButton"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bathroomPlusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_plus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/bathroomCounterTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/bathroomPlusButton"
+                    android:layout_marginHorizontal="@dimen/_14sdp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bathroomMinusButton"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="0dp"
+                    android:layout_toStartOf="@id/bathroomCounterTextview"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_border_bg">
+
+                        <ImageView
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/host_posting_minus_icon"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Bathrooms"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/bathroomMinusButton"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottomSectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FCFCFD">
+
+        <View
+            android:id="@+id/bottomTopLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EAEBF0"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_toStartOf="@id/continueButton"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Back"
+                android:textColor="#272D37"
+                android:textSize="@dimen/_9sdp"
+                android:fontFamily="@font/inter_bold"
+                android:background="@drawable/border_with_white_bg"
+                android:paddingVertical="@dimen/_6sdp"
+                android:paddingHorizontal="@dimen/_17sdp"
+                android:gravity="center"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_centerVertical="true"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetLeft="0dp"
+            android:insetBottom="0dp"
+            android:text="Continue"
+            android:textSize="@dimen/_9sdp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/inter_bold"
+            android:backgroundTint="#574EFA"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:paddingHorizontal="@dimen/_17sdp"
+            android:layout_below="@id/bottomTopLine"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

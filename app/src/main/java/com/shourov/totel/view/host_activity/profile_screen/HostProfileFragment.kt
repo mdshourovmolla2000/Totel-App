@@ -32,6 +32,8 @@ class HostProfileFragment : Fragment() {
 
         updateView()
 
+        binding.editProfileButton.setOnClickListener { findNavController().navigate(R.id.action_hostProfileFragment_to_profileSettingFragment) }
+
         binding.switchButton.setOnClickListener {
             SharedPref.write("USER_MODE", "guest")
             val intent = Intent(requireActivity(), WelcomeActivity::class.java)
@@ -46,6 +48,12 @@ class HostProfileFragment : Fragment() {
         }
 
         binding.bookingsButton.setOnClickListener { findNavController().navigate(R.id.action_hostProfileFragment_to_hostBookingsFragment) }
+
+        binding.inboxButton.setOnClickListener { findNavController().navigate(R.id.action_hostProfileFragment_to_hostInboxFragment) }
+
+        binding.spaceButton.setOnClickListener { findNavController().navigate(R.id.action_hostProfileFragment_to_hostSpaceFragment) }
+
+        binding.businessButton.setOnClickListener { findNavController().navigate(R.id.action_hostProfileFragment_to_hostBusinessFragment) }
 
         binding.logoutButton.setOnClickListener { signOutDialog() }
 
